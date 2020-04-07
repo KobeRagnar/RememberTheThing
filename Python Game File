@@ -1,0 +1,50 @@
+from random import*
+from sys import*
+from time import*
+
+originallisttobeshowed = ['Case', 'Nintendo', 'Award', 'Fan', 'Jacket', 'Vase', 'Tv', 'Laptop', 'Nike', 'Xbox']
+original = ['Case', 'Nintendo', 'Award', 'Fan', 'Jacket', 'Vase', 'Tv', 'Laptop', 'Nike', 'Xbox']
+generated = ['Mirror', 'Border', 'Door', 'Car', 'Adidas']
+
+#original choice code
+numbers4original = [0,1,2,3,4,5,6,7,8,9]
+decidednumber4original = choice(numbers4original)
+missingitem = original[decidednumber4original]
+
+#generated choice code
+numbers4generated = [0,1,2,3,4]
+decidednumber4generated = choice(numbers4generated)
+generateditem = generated[decidednumber4generated]
+
+#outcome
+original[decidednumber4original] = generateditem
+
+print("Welcome to the Remember The Thing game!\n\nIn this game, you will have to guess which item is missing and what replaced the missing item.\nYou will have 3 chances to answer! Good luck remembering!")
+print("The original list is:")
+print(originallisttobeshowed)
+input("Press Enter to continue...\n>")
+sleep(1)
+print("Generating fake list...")
+sleep(1)
+print(10 * '.')
+sleep(0.2)
+print(20 * '.')
+print(30 * '.')
+sleep(0.5)
+print(40 * '.')
+print(50 * '.')
+sleep(0.5)
+print(60 * '.')
+print(70 * '.')
+print(original)
+
+for loopz in range(3):
+    print("What item is missing to the original list?")
+    useranswer = input(">").capitalize()
+    if useranswer == missingitem:
+        print("Good job!\nWhat is the new item in the generated list?")
+        useranswer1 = input(">").capitalize()
+        if useranswer1 == generateditem:
+            print("Well done!")
+    else:
+        continue
